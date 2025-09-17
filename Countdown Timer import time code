@@ -1,0 +1,15 @@
+import time
+
+def countdown(seconds):
+    while seconds:
+        mins, secs = divmod(seconds, 60)
+        timer = f"{mins:02}:{secs:02}"
+        print(timer, end="\r")  # overwrite the same line
+        time.sleep(1)
+        seconds -= 1
+    
+    print("00:00")
+    print("Time's up!")
+
+# Example: 10-second countdown
+countdown(10)
